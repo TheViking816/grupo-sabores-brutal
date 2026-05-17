@@ -136,6 +136,8 @@ const copy = {
     contactTitle: 'Contacto corporativo',
     contactText:
       'Para propuestas de colaboración, expansión, prensa o información del grupo.',
+    deliveryTitle: 'También en delivery',
+    deliveryText: 'Algunos locales del grupo están disponibles en las principales plataformas de reparto.',
     legal: 'Aviso legal, privacidad y cookies pendientes de completar con datos oficiales de la sociedad.',
   },
   en: {
@@ -178,6 +180,8 @@ const copy = {
     growthItems: ['Multi-brand portfolio', 'Replicable concepts', 'Established local presence', 'New opening in development'],
     contactTitle: 'Corporate contact',
     contactText: 'For partnership, expansion, press or group information.',
+    deliveryTitle: 'Also available for delivery',
+    deliveryText: 'Selected group venues are available through leading delivery platforms.',
     legal: 'Legal notice, privacy and cookies to be completed with official company details.',
   },
 }
@@ -187,7 +191,7 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false)
   const t = copy[language]
 
-  const featured = useMemo(() => venues.slice(0, 3), [])
+  const featured = useMemo(() => venues.slice(0, 4), [])
 
   return (
     <div className="site-shell">
@@ -370,6 +374,18 @@ function App() {
             <Mail size={22} />
             gruposaboresbrutal@gmail.com
           </a>
+        </section>
+
+        <section className="delivery-section" aria-label={t.deliveryTitle}>
+          <div>
+            <span className="section-kicker">{t.deliveryTitle}</span>
+            <p>{t.deliveryText}</p>
+          </div>
+          <div className="delivery-badges" aria-label="Glovo, Uber Eats y Just Eat">
+            <span className="delivery-badge glovo">Glovo</span>
+            <span className="delivery-badge uber">Uber Eats</span>
+            <span className="delivery-badge justeat">Just Eat</span>
+          </div>
         </section>
       </main>
 

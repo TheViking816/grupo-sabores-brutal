@@ -193,7 +193,7 @@
 
 .hero-tile {
   position: relative;
-  min-height: 170px;
+  min-height: 142px;
   overflow: hidden;
   border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.4);
@@ -207,6 +207,11 @@
 
 .hero-tile:nth-child(3) {
   margin-right: 52px;
+}
+
+.hero-tile:nth-child(4) {
+  margin-left: 24px;
+  margin-right: 28px;
 }
 
 .hero-tile > img {
@@ -583,6 +588,59 @@
   white-space: nowrap;
 }
 
+.delivery-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 30px clamp(18px, 5vw, 72px);
+  background: #fffaf1;
+  border-top: 1px solid rgba(25, 22, 18, 0.1);
+}
+
+.delivery-section p {
+  max-width: 620px;
+  margin-top: 8px;
+  color: var(--text);
+  font-size: 17px;
+}
+
+.delivery-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.delivery-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 118px;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 8px;
+  color: #11100e;
+  background: #fff;
+  border: 1px solid rgba(25, 22, 18, 0.14);
+  font-weight: 950;
+  letter-spacing: 0;
+}
+
+.delivery-badge.glovo {
+  background: #ffd54d;
+}
+
+.delivery-badge.uber {
+  color: #fff;
+  background: #11100e;
+}
+
+.delivery-badge.justeat {
+  color: #fff;
+  background: #f05a28;
+}
+
 .site-footer {
   display: flex;
   justify-content: space-between;
@@ -602,12 +660,13 @@
   }
 
   .hero-visual {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .hero-tile,
   .hero-tile:nth-child(2),
-  .hero-tile:nth-child(3) {
+  .hero-tile:nth-child(3),
+  .hero-tile:nth-child(4) {
     min-height: 250px;
     margin: 0;
   }
@@ -712,6 +771,7 @@
   }
 
   .venue-card,
+  .venue-card.has-contain-image,
   .upcoming {
     grid-template-columns: 1fr;
   }
@@ -722,9 +782,15 @@
   }
 
   .contact-section,
+  .delivery-section,
   .site-footer {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .delivery-badges {
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .contact-link {
@@ -756,6 +822,11 @@
   .hero-tile div {
     padding: 18px;
     font-size: 23px;
+  }
+
+  .delivery-badge {
+    flex: 1 1 100%;
+    min-width: 0;
   }
 
   .venue-links a {
